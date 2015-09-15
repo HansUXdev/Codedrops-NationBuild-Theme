@@ -1,0 +1,215 @@
+
+<style>
+    :root{
+        --services_margin: 40px 0;
+    }
+
+    .services {
+        margin: 0 0;
+        /*margin: var(--services_margin);*/
+    }
+
+    .service {
+        width: 100%;
+        height: 320px;
+        margin: 80px 0;
+        text-align: center;
+        border: 1px solid #ddd;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+    .service .icon-holder {
+        position: relative;
+        top: 100px;
+        display: inline-block;
+        margin-bottom: 40px;
+        padding: 10px;
+        background: white;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+    .service .heading {
+        position: relative;
+        top: 80px;
+        -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .service .icon-holder > img.icon {
+        width: 40px;
+    }
+
+    .service:hover {
+        border-color: #00a8ff;
+    }
+
+    .service:hover .icon-holder {
+        top: -30px;
+    }
+
+    .service:hover .heading {
+        top: -30px;
+    }
+
+    .service .description {
+        width: 80%;
+        margin: 0 auto;
+        opacity: 0;
+        -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+    }
+
+    .service:hover .description {
+        opacity: 1;
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+    .row.title {
+        padding: 0 20px;
+    }
+    /*MEDIA */
+    @media(max-width:992px) {
+        .section {
+            padding: 30px 0;
+        }
+    }   
+    
+</style>
+
+
+    <section id="services" class="section section-padded">
+        <div class="row text-center title" style="background-color: rgb(101,169,89);color:#fff;">
+            <h2 style="color:#fff;">Organizations</h2>
+            <h4 class="light muted" style="color:#fff;">Achieve the best results with our wide variety of training options!</h4>
+        </div>
+        <div class="container" >
+            <!-- SIX -->
+                <div class="row services">
+                    <div class="col-md-4">
+                        <div class="service">
+                            <div class="icon-holder">
+                                <img src="1azCNL_Logo.jpg" style="width: 15em;" alt="" class="icon">
+                            </div>
+                            <h4 class="heading">Center for Neighborhood Leaders</h4>
+                            <p class="description">Our mission is to create the building blocks for grassroots organizing and political power of working families in order to have an impact in improving our communities and the policies that affect our lives.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service">
+                            <div class="icon-holder">
+                                <img src="1AZcelogo.jpg" style="width: 15em;" alt="" class="icon">
+                            </div>
+                            <h4 class="heading">Arizona Center for Empowerment</h4>
+                            <p class="description">The Arizona Center for Empowerment educates, empowers and engages our state's working families to create solutions to issues of social and economic justice.</p>
+                        </div>
+                    </div>
+                    <!--  -->
+                    <div class="col-md-4">
+                        <div class="service">
+                            <div class="icon-holder">
+                                <img src="1azMiFamilia.jpg" style="width: 15em;" alt="" class="icon">
+                            </div>
+                            <h4 class="heading">Mi Familia Vota Arizona</h4>
+                            <p class="description">Mi Familia Vota is a national, non-profit organization working to increase civic engagement in Latino, immigrant and allied communities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row services">
+                    <div class="col-md-4">
+                        <div class="service">
+                            <div class="icon-holder">
+                                <img src="heart-blue.png" alt="" class="icon">
+                            </div>
+                            <h4 class="heading">Border Action Network</h4>
+                            <p class="description">Our Vision: A humane and civil society that values healthy, just and vibrant border and immigrant communities.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service">
+                            <div class="icon-holder">
+                                <img src="heart-blue.png" alt="" class="icon">
+                            </div>
+                            <h4 class="heading">Central Arizonans for a Sustainable Economy</h4>
+                            <p class="description">CASE is diverse group of community leaders committed to raising living standards for all Arizona families through community education, increasing civic participation, leadership development, coalition building, and strengthening partner organizations.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service">
+                            <div class="icon-holder">
+                                <img src="AZAN Logo 2013.jpg" style="width: 15em;" alt="" class="icon">
+                            </div>
+                            <h4 class="heading">Arizona Advocacy Network Foundation</h4>
+                            <p class="description">The Arizona Advocacy Network works to secure electoral justice, political rights and full civic participation, especially for underrepresented and marginalized constituencies, to achieve government for the People, not corporations.</p>
+                        </div>
+                    </div>
+                </div>
+            <!-- SIX -->
+                <div class="row services">
+                    <div class="col-md-4">
+                        <div class="service">
+                            <div class="icon-holder">
+                                <img src="heart-blue.png" alt="" class="icon">
+                            </div>
+                            <h4 class="heading">Foundation for Arizona Students</h4>
+                            <p class="description">A elementum ligula lacus ac quam ultrices a scelerisque praesent vel suspendisse scelerisque a aenean hac montes.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service">
+                            <div class="icon-holder">
+                                <img src="heart-blue.png" alt="" class="icon">
+                            </div>
+                            <h4 class="heading">Arizona DREAM Act Coalition</h4>
+                            <p class="description">THE ARIZONA DREAM ACT COALITION IS AN IMMIGRANT YOUTH-LED ORGANIZATION FOCUSING ON THE FIGHT FOR HIGHER EDUCATION AND IMMIGRANT RIGHTS.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service">
+                            <div class="icon-holder">
+                                <img src="heart-blue.png" alt="" class="icon">
+                            </div>
+                            <h4 class="heading">National Association of Latino Elected Officials</h4>
+                            <p class="description">The nation’s leading nonprofit organization facilitating the full participation of Latinos in the American political process.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row services">
+                    <div class="col-md-4">
+                        <div class="service">
+                            <div class="icon-holder">
+                                <img src="PAFCOlogo.jpg" style="width: 15em;" alt="" class="icon">
+                            </div>
+                            <h4 class="heading">Protecting Arizona’s Family Coalition Educational Fund</h4>
+                            <p class="description">The Protecting Arizona’s Family Coalition (PAFCO) gives voice to vulnerable populations by promoting essential health and human service program funding.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service">
+                            <div class="icon-holder">
+                                <img src="heart-blue.png" alt="" class="icon">
+                            </div>
+                            <h4 class="heading">Promise Arizona</h4>
+                            <p class="description">Faith. Hope. Vote Promise Arizona (PAZ) is a new membership organization whose mission is to recruit, train and support a new generation of leaders from across the state to build a new Arizona, one that will allow all residents to achieve their full</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service">
+                            <div class="icon-holder">
+                                <img src="puente.jpg" style="width: 15em;" alt="" class="icon">
+                            </div>
+                            <h4 class="heading">Puente</h4>
+                            <p class="description">Mission Statement NEEDED. Mission Statement NEEDED. Mission Statement NEEDED. Mission Statement NEEDED. Mission Statement NEEDED. Mission Statement NEEDED. Mission Statement NEEDED. Mission Statement NEEDED.</p>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="cut cut-bottom"></div>
+    </section>  

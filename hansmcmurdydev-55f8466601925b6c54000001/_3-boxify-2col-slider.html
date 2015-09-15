@@ -1,0 +1,131 @@
+
+
+
+
+<style>
+	
+</style>
+
+
+
+
+
+
+
+		<section class="features-intro">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6 nopadding features-intro-img">
+						<div class="features-bg">
+							<div class="texture-overlay"></div>
+							<div class="features-img wp1">
+								<img src="img/html5-logo.png" alt="HTML5 Logo">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 nopadding">
+						<div class="features-slider">
+								<ul class="slides" id="featuresSlider">
+									<li>
+										<h1>The Fore-front of Design &amp; Technology</h1>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+										<p><a href="#features" class="arrow-btn">Find out why this freebie rocks! <i class="fa fa-long-arrow-right"></i></a></p>
+									</li>
+									<li>
+										<h1>Multi-Purpose User Centric Design</h1>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+										<p><a href="http://tympanus.net/codrops/?p=22554" class="arrow-btn">Find out why this freebie rocks! <i class="fa fa-long-arrow-right"></i></a></p>
+									</li>
+									<li>
+										<h1>Made with Love, Released for Free</h1>
+										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+										<p><a href="http://tympanus.net/codrops/?p=22554" class="arrow-btn">Find out why this freebie rocks! <i class="fa fa-long-arrow-right"></i></a></p>
+									</li>
+								</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+<script>
+	$(document).ready(function() {
+	    $(".wp1").waypoint(function() {
+	        $(".wp1").addClass("animated fadeInLeft")
+	    }, {
+	        offset: "75%"
+	    });
+	    $(".wp2").waypoint(function() {
+	        $(".wp2").addClass("animated fadeInDown")
+	    }, {
+	        offset: "75%"
+	    });
+	    $(".wp3").waypoint(function() {
+	        $(".wp3").addClass("animated bounceInDown")
+	    }, {
+	        offset: "75%"
+	    });
+	    $(".wp4").waypoint(function() {
+	        $(".wp4").addClass("animated fadeInDown")
+	    }, {
+	        offset: "75%"
+	    });
+	    $("#featuresSlider").flickity({
+	        cellAlign: "left",
+	        contain: true,
+	        prevNextButtons: false
+	    });
+	    $("#showcaseSlider").flickity({
+	        cellAlign: "left",
+	        contain: true,
+	        prevNextButtons: false,
+	        imagesLoaded: true
+	    });
+	    $(".youtube-media").on("click", function(e) {
+	        var t = $(window).width();
+	        if (t <= 768) {
+	            return
+	        }
+	        $.fancybox({
+	            href: this.href,
+	            padding: 4,
+	            type: "iframe",
+	            href: this.href.replace(new RegExp("watch\\?v=", "i"), "v/")
+	        });
+	        return false
+	    })
+	});
+	$(document).ready(function() {
+	    $("a.single_image").fancybox({
+	        padding: 4
+	    })
+	});
+	$(".nav-toggle").click(function() {
+	    $(this).toggleClass("active");
+	    $(".overlay-boxify").toggleClass("open")
+	});
+	$(".overlay ul li a").click(function() {
+	    $(".nav-toggle").toggleClass("active");
+	    $(".overlay-boxify").toggleClass("open")
+	});
+	$(".overlay").click(function() {
+	    $(".nav-toggle").toggleClass("active");
+	    $(".overlay-boxify").toggleClass("open")
+	});
+	$("a[href*=#]:not([href=#])").click(function() {
+	    if (location.pathname.replace(/^\//, "") === this.pathname.replace(/^\//, "") && location.hostname === this.hostname) {
+	        var e = $(this.hash);
+	        e = e.length ? e : $("[name=" + this.hash.slice(1) + "]");
+	        if (e.length) {
+	            $("html,body").animate({
+	                scrollTop: e.offset().top
+	            }, 2e3);
+	            return false
+	        }
+	    }
+	})
+	
+</script>

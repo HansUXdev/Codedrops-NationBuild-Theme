@@ -1,0 +1,122 @@
+{% if page.slug == 'calendar' %}
+
+<style>
+   ol.calendar{
+    /*background: #efe2aa ;*/
+    display: block;
+    margin: 0 auto;
+    min-height: 200px;
+    padding: 12px 0 0 20px;
+    width: 52em;
+  }
+  ol.calendar li{
+    list-style: none;
+    background: #efe2aa;
+  }
+  ol.calendar p.link{
+    display: block;
+    text-align: center;
+  }
+  ol.calendar h1{
+    background: #efe2aa;
+    display: block;
+    height: 76px;
+    margin: 15px auto;
+    text-indent: -9999px;
+    width: 200px;
+  }
+  ol.calendar li li{
+    /*background: #efe2aa bottom right no-repeat;*/
+    float: left;
+    height: 6em;
+    margin: .2em;
+    overflow: auto;
+    padding: .2em;
+    width: 6em;
+  }
+  ol.calendar li li p{
+    display: block;
+    font-size: .7em;
+  }
+  ol.calendar li li ol{
+    width: auto;
+  }
+  ol.calendar li li ul li,
+   li li ol li{
+    background: none;
+    display: block;
+    float: none;
+    font-size: .7em;
+    height: auto;
+    margin: 0;
+    padding: .2em 0;
+    width: auto;
+  }
+  ol.calendar li li.holiday{
+  }
+  ol.calendar li#lastmonth li,
+  ol.calendar li#nextmonth li{
+    /*background: #efe2aa;*/
+  }
+</style>
+<ol class="calendar" start="6">
+  
+    <li id="lastmonth">
+      <ul start="29">
+        <li>29</li>
+        <li>30</li>
+      </ul>
+    </li>
+    
+    <li id="thismonth">
+
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="holiday">4 <p>You can use a paragraph element in here</p></li>
+        <li>5</li>
+
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9 <ul><li>Or using an unordered list</li><li>will work just fine</li></ul></li>
+        <li>10</li>
+
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+        <li>16</li>
+
+        <li>17<ol><li>maybe you need an ordered list?</li><li>That is ok too</li><li>even when you have too much stuff to do!</li></ol></li>
+        <li>18</li>
+        <li>19</li>
+        <li>20</li>
+        <li>21</li>
+
+        <li>22</li>
+        <li>23</li>
+        <li>24</li>
+        <li>25</li>
+        <li>26</li>
+        <li>27</li>
+
+        <li>28</li>
+        <li>29</li>
+        <li>30</li>
+        <li>31</li>
+      </ul>
+    </li>
+    
+    <li id="nextmonth">
+
+      <ul>
+        <li>1</li>
+        <li>2</li>
+      </ul>
+    </li>
+    
+</ol>
+{% endif %}

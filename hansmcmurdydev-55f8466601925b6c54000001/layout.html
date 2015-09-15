@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js" lang="">
+<!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page_title }}</title>
+
+  {% if page.slug == 'dashboard' %}
+
+        <!-- Bootstrap core CSS -->
+        <link href=" bootstrap.css" rel="stylesheet">
+
+        <!-- Add custom CSS here -->
+        <link href="sb-admin.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+        <!-- Page Specific CSS -->
+        <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+   {% else %}
+        {% include "1-sedna-css" %}
+{% endif %}
+    <!--  -->
+    {{ content_for_header }}
+
+    <script type="text/javascript">
+      NB.appConfig.userIsLoggedIn = {{request.logged_in?}};
+    </script>
+  </head>
+  <body class="aware-theme v2-theme {{ page.page_class_name }} page-{{ request.template | replace: '_', '-' }} js">
+
+
+
+    <!-- Default nav -->
+    {% comment %}
+      {% include "nav" %}
+    {% endcomment %}
+
+    <!-- Sedona NAV ! -->
+    {% include "1az-nav" %}
+
+
+
+<!-- Page Content -->
+
+
+{% if request.is_sidebar? %}
+    {% include "columns_2" %}
+  {% else %}
+    {% include "columns_1" %}
+{% endif %}
+
+<!-- END PAGE CONTENT -->
+
+
+
+    <section class="to-top">
+        <div class="container">
+            <div class="row">
+                <div class="to-top-wrap">
+                    <a href="#top" class="top"><i class="fa fa-angle-up"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            {{ content_for_footer }}
+
+        {% if site.footer_content.size > 0 %}
+        <div class="footer-text">{{ site.footer_content }}</div>
+        <hr/>
+        {% endif %}
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="footer-links">
+                        <ul class="footer-group">
+                            {% if request.logged_in? %}
+                            <li>
+                                <a href="{{ request.current_signup.settings_url }}">{{ request.current_signup.name_or_email }}</a>
+                                View your
+
+                            </li>
+                            <li>{% if site.show_public_profiles? %}
+                                <a href="{{ request.current_signup.profile_url }}">public profile</a>
+                                {% endif %}
+                            </li>
+                            <li>
+                                <a href="{{ request.current_signup.settings_url }}">account settings</a>
+                                ,or
+                            </li>
+                            <li>
+                                <a href="{{ request.current_signup.logout_url }}">sign out</a>
+                            </li>
+                            {% else %}
+                            <li>
+                                Sign in with 
+                                <a href="{{ request.facebook_connect_url }}" class="facebook-share">
+                                    <!-- Facebook -->
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ request.twitter_connect_url }}" class="twitter-share">
+                                    <!-- Twitter -->
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>or <a href="/login">email</a></li>
+                            {% endif %}
+                        </ul>
+                        <p>
+                            <!-- The NationBuilder link below is required. If it is removed, we may add it back ourselves.
+                             You can style it or move it in different ways, but please leave it in the footer. -->
+
+                            VERY PAINFULLY Created with <a href="http://nationbuilder.com/">NationBuilder</a>
+                            <br>
+                        <a href="#">Licence</a>
+                         | Crafted with <span class="fa fa-heart pulse2"></span> by <a href="#">Hans McMurdy</a>
+                         .
+                        </p>
+                    </div>
+                </div>
+                <div class="social-share">
+                    <p>Share Sedona with your friends</p>
+                    <a href="https://twitter.com/hansonconsult" class="twitter-share"><i class="fa fa-twitter"></i></a> <a href="#" class="facebook-share"><i class="fa fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Page Scripts -->
+
+  {% if page.slug == 'dashboard' %}
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="bootstrap.js"></script>
+        <!-- Page Specific Plugins -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+        <script src="dashboard-chart-data-morris.js"></script>
+        <script src="dashboard-jquery.tablesorter.js"></script>
+        <script src="dashboard-tables.js"></script>
+    {% else %}
+        {% include "1-theme-js" %}
+{% endif %}
+
+  </body>
+</html>
+

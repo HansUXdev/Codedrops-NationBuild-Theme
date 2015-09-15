@@ -1,0 +1,101 @@
+
+
+
+    <section class="hero"
+    {% if page.is_homepage? == true %}
+        style="
+            min-height: 750px; 
+            background: url('http://d3n8a8pro7vhmx.cloudfront.net/themes/55f045b5ebad641787000001/attachments/original/1442000368/IMG_7202.JPG?1442000368') center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        "
+    {% endif %}
+    >
+        <section class="navigation" style="display: none;">
+            <header>
+                <div class="header-content">
+                    <!-- <div class="logo"><a href="#"><img src="img/oneaz_logo.png" class="logo-img" alt="Sedna logo" ></a></div> -->
+                    {% if site.has_meta_image? %}
+                    <div class="logo">
+                        <a href="#">
+                            <img src="{{ site.meta_image_url }}" class="logo-img" alt="{{ site.long_name }}" >
+                            {% else %}
+                        </a>
+                    </div>
+                    {% endif %}
+                    <div class="header-nav">
+                        <nav>
+                            <ul class="primary-nav">
+                            {% for child in site.root_nav_pages %}
+                                {% if child.leaf? or child.nav_children.size == 0 %}
+                                    <li><a href="{{ child.url }}">{{child.name}}</a></li>
+                                {% else %}
+                                <!-- Add dropdown support? -->
+                                {% endif %}
+                            {% endfor %}
+                                <!-- <li><a href="#features">Features</a></li>
+                                <li><a href="#assets">Assets</a></li>
+                                <li><a href="#blog">Blog</a></li>
+                                <li><a href="#download">Download</a></li> -->
+                            </ul>
+                            <ul class="member-actions">
+                                <li><a href="#download" class="login">Volunteer</a></li>
+                                <li><a href="#download" class="btn-white btn-small">Donate</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="navicon">
+                        <a class="nav-toggle" href="#"><span></span></a>
+                    </div>
+                </div>
+            </header>
+        </section>
+        <!-- HEADER-CONTENT -->
+        {% if page.is_homepage? == true %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+
+                    <div class="hero-content text-center">
+                        {% if site.has_meta_image? %}
+                        <div class="logo">
+                            <a href="#">
+                                <img src="{{ site.meta_image_url }}" class="logo-img" alt="{{ site.long_name }}" 
+                                style="
+                                height: 12em;
+                                width: 29em;
+                                ">
+                                {% else %}
+                            </a>
+                        </div>
+                        {% endif %}
+                        <h1 class="typed">
+                            #OneAZVotes
+                        </h1>
+                        
+                        {% comment %}
+                        <p class="intro">
+                            {{ page.basic.content }}
+                            <!-- Introducing “Sedna”. A responsive one page website, designed & developed by Peter Finlan, exclusively for Codrops. -->
+                        </p>
+                        {% endcomment %}
+
+                        <a href="#" class="btn btn-fill btn-large btn-margin-right">Volunteer</a>
+                        <a href="#" class="btn btn-accent btn-large">Learn more</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <!-- THIS IS USED STRICKLY FOR TESTING PURPOSES -->
+        <div class="filler" style="height: 200px;"></div>
+        {% endif %}
+        <!-- HEADER-CONTENT -->
+        <div class="down-arrow floating-arrow"><a href="#"><i class="fa fa-angle-down"></i></a></div>
+    </section>
+
+
+

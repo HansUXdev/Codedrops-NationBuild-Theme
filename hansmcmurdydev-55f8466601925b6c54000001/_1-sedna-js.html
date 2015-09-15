@@ -1,0 +1,233 @@
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="jquery-1.11.2.min.js"><\/script>')</script>
+    <!-- 
+    -->
+    <script src="owl.carousel.min.js"></script>
+
+    <!--  -->
+    <script src="retina.js"></script>
+
+    <!-- IF boxify slider -->
+    <script src="flickity.pkgd.min.js"></script>
+    <!--  -->
+    
+    <script src="jquery.fancybox.pack.js"></script>
+    <script src="bootstrap.min.js"></script>
+    {% if page.is_homepage? == true %}
+        <script src="typewriter.js"></script>
+    {% endif %}
+
+    {% if page.slug == 'calendar' %}
+            <script src="responsive-calendar.js"></script>
+    {% endif %}
+
+    <!-- script.js is the orignal script -->
+
+<script>
+$(document).ready(function() {
+
+    /***************** Nav Transformicon ******************/
+
+    /* When user clicks the Icon */
+        $('.nav-toggle').click(function() {
+            $(this).toggleClass('active');
+            $('.header-nav').toggleClass('open');
+            event.preventDefault();
+        });
+    /* When user clicks a link */
+        $('.header-nav li a').click(function() {
+            $('.nav-toggle').toggleClass('active');
+            $('.header-nav').toggleClass('open');
+
+        });
+
+
+/***************** Home Page ******************/
+{% if page.is_homepage? == true %}
+    /***************** Typewriter ******************/
+        $(".typed").typewriter({
+            speed: 60
+        });
+
+    /***************** owl Pricing ******************/
+            var owlPricing;
+            var ratio = 2;
+
+            $(window).load(function() {
+
+
+                // Sliders Init
+                $('.owl-schedule').owlCarousel({
+                    singleItem: true,
+                    pagination: true
+                });
+                $('.owl-testimonials').owlCarousel({
+                    singleItem: true,
+                    pagination: true
+                });
+                $('.owl-twitter').owlCarousel({
+                    singleItem: true,
+                    pagination: true
+                });
+
+
+            });
+    /***************** owl Pricing ******************/
+    /***************** Waypoints ******************/
+
+        $('.wp1').waypoint(function() {
+            $('.wp1').addClass('animated fadeInUp');
+        }, {
+            offset: '75%'
+        });
+        $('.wp2').waypoint(function() {
+            $('.wp2').addClass('animated fadeInUp');
+        }, {
+            offset: '75%'
+        });
+        $('.wp3').waypoint(function() {
+            $('.wp3').addClass('animated fadeInRight');
+        }, {
+            offset: '75%'
+        });
+
+    /***************** Initiate Flexslider ******************/
+        $('.flexslider').flexslider({
+            animation: "slide"
+        });
+    /***************** Initiate Fancybox ******************/
+        $('.single_image').fancybox({
+            padding: 4,
+        });
+    /***************** Tooltips ******************/
+        $('[data-toggle="tooltip"]').tooltip();
+    /***************** Scroll >= 500 ******************/
+        $(function() {
+            $(window).scroll(function() {
+                var scroll = $(window).scrollTop();
+                // if (scroll < 500){
+                    // $('section.navigation').css({
+                    //  "display": "none",
+                    // });
+                // }
+                if (scroll >= 500) {
+                    $('section.navigation').addClass('fixed');
+                    $('header').css({
+                        "border-bottom": "none",
+                        "padding": "35px 0"
+                    });
+                    $('header .member-actions').css({
+                        "top": "26px",
+                    });
+                    $('header .navicon').css({
+                        "top": "70px",  //~ 70px        // orginal = 34px
+                    });
+                    $('section.navigation').css({
+                        "display": "block",
+                    });
+                } else {
+                    $('section.navigation').css({
+                        "display": "none",
+                    });
+                    $('section.navigation').removeClass('fixed');
+                    $('header').css({
+                        "border-bottom": "solid 1px rgba(255, 255, 255, 0.2)",
+                        "padding": "50px 0"
+                    });
+                    $('header .member-actions').css({
+                        "top": "41px",
+                    });
+                    $('header .navicon').css({
+                        "top": "50px",  // 80px         // orginal = 48px
+                    });
+
+                }
+            });
+        });
+{% else %}
+    /*****************  Else Nav  ******************/
+        $(function() {
+            $(window).scroll(function() {
+                var scroll = $(window).scrollTop();
+                // if (scroll < 500){
+                    // $('section.navigation').css({
+                    //  "display": "none",
+                    // });
+                // }
+                if (scroll >= 20) {
+                    $('section.navigation').addClass('fixed');
+                    $('header').css({
+                        "border-bottom": "none",
+                        "padding": "35px 0"
+                    });
+                    $('header .member-actions').css({
+                        "top": "26px",
+                    });
+                    $('header .navicon').css({
+                        "top": "70px",  //~ 70px        // orginal = 34px
+                    });
+                    $('section.navigation').css({
+                        "display": "block",
+                    });
+                } else {
+                    $('section.navigation').css({
+                        "display": "none",
+                    });
+                    $('section.navigation').removeClass('fixed');
+                    $('header').css({
+                        "border-bottom": "solid 1px rgba(255, 255, 255, 0.2)",
+                        "padding": "50px 0"
+                    });
+                    $('header .member-actions').css({
+                        "top": "41px",
+                    });
+                    $('header .navicon').css({
+                        "top": "50px",  // 80px         // orginal = 48px
+                    });
+
+                }
+            });
+        }); 
+{% endif %}
+    /*****************  END Home Page  ******************/
+        $(function() {
+
+            $('a[href*=#]:not([href=#])').click(function() {
+                if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 2000);
+                        return false;
+                    }
+                }
+            });
+
+        });
+
+
+
+{% if page.slug == 'calendar' %}
+        $(".responsive-calendar").responsiveCalendar({
+          time: '2015-05',
+          events: {
+            "2015-09-30": {"number": 5, "url": "http://w3widgets.com/responsive-slider"},
+            "2015-04-26": {"number": 1, "url": "http://w3widgets.com"}, 
+            "2015-05-03":{"number": 1}, 
+            "2015-06-12": {}}
+        });
+{% endif %}
+
+
+});  
+
+</script>
+
+
+
+    <script src="jquery.flexslider-min.js"></script>
+    <script src="classie.js"></script>
+    <script src="jquery.waypoints.min.js"></script>
