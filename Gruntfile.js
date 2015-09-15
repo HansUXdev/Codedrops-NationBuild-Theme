@@ -5,6 +5,10 @@ module.exports = function(grunt) {
     // vendor: grunt.file.readJSON('.bowerrc').directory,
 
     config: {
+      // This should switch grunt.loadTasks('<%= config.mode %>') from dev to grunt
+      // allowing you to easily switch between copying your current theme 
+      // from theme-sync and into a src/**/* for easy file management
+      // and to grunt which is intended to do the opposite, watch the files and copy into the themesync folder...
       mode: 'dev',
 
       live: 'src',
