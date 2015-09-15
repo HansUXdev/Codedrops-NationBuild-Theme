@@ -1,0 +1,62 @@
+<div class="column content-{{ request.template  | replace: '_', '-' }}">
+
+  <div class="row">
+
+    <div class="col-md-9">
+
+      {{ content_for_notifications }}      
+
+
+{% if page.is_homepage? == true %}
+
+        {{ page.basic.content }}
+
+
+
+      {% include "1-boxify-slider" %}
+      {% include "1-sedna-intro" %}
+      {% include "1az-organizations" %}
+      
+      {% include "1-sedna-features" %}
+      {% include "1-sedna-features-assets" %}
+
+      {% include "1-sedna-blog" %}
+      {% include "1-sedna-testimonial" %}
+      {% include "1-cardio-slider" %}
+      {% include "1-sedna-signup" %}
+      {% include "1-sedna-testimonial" %}
+
+{% endif %}
+
+      {% if page.slug == 'issues' %}
+          {% include "1-sedna-intro" %}
+      {% endif %}
+
+
+
+
+      {% yield %}
+
+
+
+
+    </div>
+
+
+    <div class="col-md-3 sidebar">
+
+      {% if request.logged_in? %}
+        <h2>Support Nav</h2>
+        {% include "1-supporter_nav" %}
+
+      {% else %}
+        {% include "1-else-supporter_nav" %}
+
+
+      {% endif %}
+
+    </div>
+
+  </div>
+
+</div> 

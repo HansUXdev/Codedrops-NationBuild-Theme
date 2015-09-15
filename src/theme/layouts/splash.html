@@ -1,0 +1,120 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Begin Page Title -->
+  <title>{{ page_title }}</title>
+  <!-- End Page Title -->
+
+  <!-- Begin Stylesheets -->
+
+
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap.css" rel="stylesheet">
+
+        <!-- Add custom CSS here -->
+        <link href="sb-admin.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+        <!-- Page Specific CSS -->
+        <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">
+
+  
+  
+  
+  <script src="modernizr.js"></script>
+
+  <!-- Begin NationBuilder’s “Content For Header” Include -->
+  {{ content_for_header }}
+
+  <script type="text/javascript">
+    NB.appConfig.userIsLoggedIn = {{request.logged_in?}};
+  </script>
+  <!-- End NationBuilder’s “Content For Header” Include -->
+</head>
+<body id="{{ page.slug }}" class="antialiased">
+
+  <!-- Begin Nav Bar -->
+  {% include "nav" %}
+  <!-- End Nav Bar -->
+
+  <!-- Begin Main Page Content and Sidebar -->
+  <div id="{% if request.is_sidebar? %}columns-2{% else %}columns-1{% endif %}">
+      {% if request.is_sidebar? %}
+        {% include "columns_2" %}
+      {% else %}
+        {% include "columns_1" %}
+      {% endif %}
+  </div>
+  <!-- End Main Content and Sidebar -->
+
+  <!-- Begin Footer -->
+  <footer>
+    <div class="row">
+      <div class="large-12 columns">
+        <hr />
+        <div class="row">
+          <div class="large-6 columns">{{ site.footer_content }}</div>
+          <div class="large-6 columns">
+            <p class="right">
+              {% if request.logged_in? %}
+                Hi
+              <a href="{{ request.current_signup.settings_url }}">{{ request.current_signup.name_or_email }}</a>
+              . View your
+                {% if site.show_public_profiles? %}
+              <a href="{{ request.current_signup.profile_url }}">public profile</a>
+              ,
+                {% endif %}
+              <a href="{{ request.current_signup.settings_url }}">account settings</a>
+              , or
+              <a href="{{ request.current_signup.logout_url }}">sign out</a>
+              .
+              {% else %}
+                Sign in with
+              <a href="{{ request.facebook_connect_url }}">Facebook</a>
+              ,
+              <a href="{{ request.twitter_connect_url }}">Twitter</a>
+              or
+              <a href="/login">email</a>
+              .
+              {% endif %}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-12 columns">
+        <!-- The NationBuilder link below is required. If it is removed, we may add it back ourselves.
+                     You can style it or move it in different ways, but please leave it in the footer. -->
+        <p class="text-center">
+          <small>
+            Created with
+            <a href="http://nationbuilder.com">NationBuilder</a>
+          </small>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+  
+  
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="bootstrap.js"></script>
+        <!-- Page Specific Plugins -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+        <script src="dashboard-chart-data-morris.js"></script>
+        <script src="dashboard-jquery.tablesorter.js"></script>
+        <script src="dashboard-tables.js"></script>
+
+  <!-- End Javascript -->
+
+  <!-- Begin NationBuilder’s “Content For Footer” Include -->
+  {{ content_for_footer }}
+  <!-- End NationBuilder’s “Content For Footer” Include -->
+</body>
+</html>

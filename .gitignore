@@ -3,7 +3,7 @@ node_modules
 www
 client
 api
-src/**/*.html
+src/**/*.{html,scss,css,jpg,png,svg,eps}
 
 # Windows image file caches
 Thumbs.db
