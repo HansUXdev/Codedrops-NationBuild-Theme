@@ -15,6 +15,15 @@ module.exports = function(grunt) {
                   // This is the folder themesync watchs
                   // Download the themesync folder into root and switch the file name
       themesync: 'hansmcmurdydev-55f8466601925b6c54000001',
+      build: 'build',
+      //NB SRC files
+      layouts: 'src/theme/layouts', //use this <%= config.layouts %>
+      pages: 'src/theme/pages', 
+      user: 'src/theme/user', 
+      account: 'src/theme/account',
+      misc: 'src/theme/misc', 
+      include: 'src/theme/include', 
+      
     },
 
   });
@@ -22,7 +31,7 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
 
   //Change grunt to dev if you dont want to use this theme. The copy task
-  grunt.loadTasks('dev');
+  grunt.loadTasks('grunt');
 
 
   grunt.registerTask('clear',['clean']);
