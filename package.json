@@ -1,0 +1,25 @@
+{
+  "name": "nationbuilder-theme-builder",
+  "description": "A Nation Builder theme based off bootstrap, codedrops and powered by grunt.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Hans McMurdy",
+    "url": "https://github.com/hansUXdev"
+  },
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-concurrent": "^1.0.0",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-shell": "^1.1.1",
+    "load-grunt-tasks": "*"
+  },
+  "private": "true",
+  "keywords": [
+    "nation-builder",
+    "theme"
+  ]
+}
