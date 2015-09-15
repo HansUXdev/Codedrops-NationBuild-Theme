@@ -15,7 +15,7 @@ module.exports = function(grunt) {
                   // This is the folder themesync watchs
                   // Download the themesync folder into root and switch the file name
       themesync: 'hansmcmurdydev-55f8466601925b6c54000001',
-      build: 'build',
+      build: 'build', // set this = to config.themesync when production copy task is complete
       //NB SRC files
       layouts: 'src/theme/layouts', //use this <%= config.layouts %>
       pages: 'src/theme/pages', 
