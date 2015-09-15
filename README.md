@@ -3,6 +3,15 @@ This repo is intended to extend Nation Builder Theme Development by using grunt 
 
 With that said, THIS IS HIGHLY UNSTABLE and I strongly discourage using grunt if you do not have experiance with it...
 
+
+## Cool Features
+1). Dashboard for admins (partially working... )
+( may require looping liquid through inline javascript objects in hansmcmurdydev-_1-theme-js.html)
+
+2). Lots of other cool goodies inspired from codedrops...
+
+
+
 ## TO-DO
 1. Finish Theme...
 2. Finalize grunt tasks
